@@ -1,0 +1,11 @@
+Hello {{ name }},
+
+Thank you for your interest in {{ animal }}. 
+We regret to inform you that your adoption application has been denied.
+
+We wish you the best of luck in finding a new furry friend.
+If you have any questions, please feel free to contact us.
+
+Best Regards,
+The Team @ Animal House
+{{ contact_email }}

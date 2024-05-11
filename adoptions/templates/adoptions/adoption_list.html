@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Adoption Requests{% endblock %}
+
+{% block content %}
+<h1>Adoption Requests</h1>
+<div class="d-flex flex-wrap">
+    {% for adoption in adoption_list %}
+    <div>
+        <h2>{{ addoption.animal.name}}</h2>
+        <p>Status: {{ adoption.status }}</p>
+        <a href="{% url 'adoptions:detail' adoption.id %}">View</a>
+    </div>
+    {% endfor %}
+</div class="d-flex flex-wrap">
+{% endblock %}

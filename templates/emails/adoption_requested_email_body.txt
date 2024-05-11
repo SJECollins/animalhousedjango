@@ -1,0 +1,9 @@
+Hello {{ name }},
+
+Thank you for your interest in adoption {{ animal }}.
+We have received your application and will be in touch shortly.
+
+
+Best Regards,
+The Team @ Animal House
+{{ contact_email }}

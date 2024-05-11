@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Adoption Request{% endblock %}
+
+{% block content %}
+
+<h1>{{ adoption.animal.name }}</h1>
+<div class="d-flex">
+    <div class="d-flex flex-column">
+        <h2>Animal</h2>
+        <p>Name: {{ adoption.animal.name }}</p>
+        <p>Species: {{ adoption.animal.species }}</p>
+        <p>Breed: {{ adoption.animal.breed }}</p>
+        <p>Age: {{ adoption.animal.age }}</p>
+    </div>
+    <div class="d-flex flex-column">
+        <h2>Request</h2>
+        <p>Status: {{ adoption.status }}</p>
+        <p>Requester: {{ adoption.user.name }}</p>
+        <p>Email: {{ adoption.email }}</p>
+    </div>
+</div>
+<div class="d-flex">
+    <a href="{% url 'adoptions:edit' adoption.id %}">Edit</a>
+    <a href="{% url 'adoptions:delete' adoption.id %}">Delete</a>
+    <a href="{% url 'adoptions:list' %}">Back to List</a>
+</div>
+
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Animals</h1>
+<p>Our rescue is home to a variety of adorable animals, including dogs,
+    cats, rabbits, guinea pigs, and possibly even some feathered friends.
+    Each of these animals has its own unique story and is in search of a
+    loving forever home. Explore their profiles to discover their
+    individual personalities, backgrounds, and specific needs. Your
+    support can make a real difference in their lives. Together, we can
+    provide these animals with the second chance they deserve.</p>
+
+<div class="row">
+    {% for animal in animals %}
+    <div class="card" style="width: 18rem;">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{ animal.name }}</h5>
+            <p class="card-text">{{ animal.breed }}</p>
+            <a href="{% url 'animal:animal_detail' %}" class="btn btn-primary">View {{ animal.name }}</a>
+        </div>
+    </div>
+    {% empty %}
+    <p>No animals available.</p>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title%}{{ title }}{% endblock %}
+
+{% block content %}
+<div class="col">
+    <h2>{{ title }}</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form|crispy }}
+        {% if delete %}
+        <button type="submit" class="btn btn-danger">Delete</button>
+        {% else %}
+        <button type="submit" class="btn btn-primary">Submit</button>
+        {% endif %}
+        {% if back_url %}
+        <a href="{{ back_url }}" class="btn btn-secondary">Cancel</a>
+        {% else %}
+        <a href="{% url 'home:home' %}" class="btn btn-secondary">Cancel</a>
+        {% endif %}
+    </form>
+</div>
+
+{% endblock %}

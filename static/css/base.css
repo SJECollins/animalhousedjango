@@ -1,0 +1,97 @@
+/* Import google font */
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Reddit+Sans:ital,wght@0,200..900;1,200..900&display=swap");
+
+/* Root variables for colours */
+:root {
+  --site-dark: #5b21a6;
+  --site-light: #8b5cf6;
+}
+
+/* Base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  height: 100vh;
+  font-family: "Reddit Sans", sans-serif;
+  color: #333;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.5rem;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+button {
+  background-color: var(--site-dark);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--site-light);
+}
+
+/* Alert styling */
+.custom-alert {
+  min-width: 300px;
+  position: fixed;
+  top: 6em;
+  right: 1em;
+  padding: 0.5em;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px 0 var(--site-grey);
+}
+
+/* Header */
+nav,
+.dropdown-menu {
+  background-color: var(--site-dark);
+  color: white;
+  padding: 1rem;
+}
+
+/* Hero */
+.hero {
+  background: url("/media/hero.jpg") center center / cover no-repeat;
+  height: 400px;
+  width: 100vw;
+}
+.hero-text {
+  padding: 1rem;
+  margin: 1rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: fit-content;
+  border-radius: 8px;
+  color: white;
+}
+
+/* Footer */
+footer {
+  background-color: var(--site-dark);
+  color: white;
+  padding: 0 1rem;
+}
+
+.footer-text {
+  font-size: 0.8rem;
+  margin-bottom: 0;
+}

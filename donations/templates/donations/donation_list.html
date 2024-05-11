@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="d-flex flex-column justify-content-evenly align-items-center mx-auto">
+    <h1>Donations</h1>
+    <div class="mx-auto">
+        <p class="text-justify">
+            This page is a testament to the incredible generosity of our
+            supporters. Here, we acknowledge the kindness and compassion of those
+            who have contributed to our cause. Every donation, big or small,
+            represents a step closer to providing a better life for the animals in
+            our care.
+        </p>
+        <br />
+        <p class="text-justify">
+            Your contributions directly support our mission to rescue and care for
+            dogs, cats, rabbits, guinea pigs, and more. We are deeply grateful for
+            your support, and we want to recognize your commitment. Together,
+            we're making a real impact and giving these animals a brighter future.
+            Thank you for being a part of our journey.
+        </p>
+        <a href="{% url 'donations:donate' %}" class="btn btn-primary mt-4">
+            Donate Now
+        </a>
+        <h1>Hall of Fame</h1>
+        {% for donation in donations %}
+        <div class="d-flex flex-wrap w-11/12 justify-content-evenly gap-4">
+            <div class="w-56 rounded overflow-hidden shadow-lg mb-4">
+                <div class="px-6 py-4">
+                    <div class="font-bold text-xl text-center mb-2">
+                        €{donation.amount}
+                    </div>
+                    <p class="text-gray-700 text-base">
+                        donated by {% if donation.name %}{{donation.name}}{% else %}Anonymous{% endif %}
+                    </p>
+                    {% if donation.message %}
+                    <p> {{ donation.message }}</p>
+                    {% endif %}
+                </div>
+            </div>
+            {% empty %}
+            <p>There are no recent donations.</p>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}
